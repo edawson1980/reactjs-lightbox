@@ -1,8 +1,13 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 
 function App() {
+  //set an initial state for a blank image (because modal will only open if image is present)
+  const [image, updateImage] = useState({
+    src: ``,
+    alt: ``
+  });
 
   return (
     <div className="App">
