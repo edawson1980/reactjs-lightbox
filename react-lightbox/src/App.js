@@ -3,6 +3,27 @@ import './App.css';
 
 
 function App() {
+  //set images in state, versus hardcoding
+  const [images] = useState([
+
+    {
+      src: "/images/artem-sapegin-8c6eS43iq1o-unsplash.jpg",
+      alt: "Sunset Behind Mountains by Artem Sapegin via Unsplash"
+    },
+
+    {
+      src: "/images/ashley-knedler-OwpgxILRR7c-unsplash.jpg",
+      alt: "Antelope Canyon by Ashley Knedler via Unsplash"
+    },
+
+    {
+      src: "/images/cristina-gottardi-R4y_E5ZQDPg-unsplash.jpg",
+      alt: "Mountains And Trees Reflecting On Lake by Cristina Gottardi via Unsplash"
+    }
+
+
+  ]);
+
   //set an initial state for a blank image (because modal will only open if image is present)
   const [image, updateImage] = useState({
     src: ``,
@@ -39,21 +60,7 @@ function App() {
     <div className="App">
 
     <section className="lightbox">
-      <img
-      onClick={openModal}
-      src="/images/artem-sapegin-8c6eS43iq1o-unsplash.jpg"
-      alt="Sunset Behind Mountains by Artem Sapegin via Unsplash"
-      />
-      <img
-      onClick={openModal}
-      src="/images/ashley-knedler-OwpgxILRR7c-unsplash.jpg"
-      alt="Antelope Canyon by Ashley Knedler via Unsplash"
-      />
-      <img
-      onClick={openModal}
-      src="/images/cristina-gottardi-R4y_E5ZQDPg-unsplash.jpg"
-      alt="Mountains And Trees Reflecting On Lake by Cristina Gottardi via Unsplash"
-      />
+
     </section>
 
     {/*this conditional says that IF image.src isn't empty AND a div named "overlay" exists, show that overlay*/}
