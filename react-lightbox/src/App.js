@@ -18,6 +18,14 @@ function App() {
     console.log(image);
   }
 
+  //create a function to close the lightbox
+  function closeModal(event) {
+    updateImage({
+      src: ``,
+      alt: ``
+    })
+  }
+
   return (
     <div className="App">
 
@@ -40,7 +48,7 @@ function App() {
     </section>
 
     {/*this conditional says that IF image.src isn't empty AND a div named "overlay" exists, show that overlay*/}
-    {image.src !== `` && <div id="overlay">
+    {image.src !== `` && <div onClick={closeModal} id="overlay">
       <figure>
         <img src={image.src} alt={image.alt}/>
         <figcaption>{image.alt}</figcaption>
