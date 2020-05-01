@@ -15,12 +15,13 @@ function App() {
       src: event.target.src,
       alt: event.target.alt
     })
-    console.log(image);
+    //add event listener to the entire browser window when openModal is called
+    document.addEventListener(`keyup`, listenForClose);
   }
 
-  //create a function to make sure only clicking the div will close the lightbox. clicking the photo will have no effect.
+  //function to close lightbox either by pressing Esc or by clicking on the gray overlay itself
   function listenForClose(event) {
-    if (event.target.id === `overlay`) {
+    if (event.target.id === `overlay` || event.key === `Escape`) {
       closeModal();
     }
   }
