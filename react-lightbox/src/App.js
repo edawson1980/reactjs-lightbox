@@ -9,6 +9,15 @@ function App() {
     alt: ``
   });
 
+  //create function to open the lightbox
+  function openModal(event) {
+    updateImage({
+      src: event.target.src,
+      alt: event.target.alt
+    })
+    console.log(image);
+  }
+
   return (
     <div className="App">
 
