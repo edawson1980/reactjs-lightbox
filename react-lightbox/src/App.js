@@ -27,6 +27,7 @@ function App() {
       <img onClick={openModal} src="/images/cristina-gottardi-R4y_E5ZQDPg-unsplash.jpg" alt="Mountains And Trees Reflecting On Lake by Cristina Gottardi via Unsplash"/>
     </section>
 
+    {image.src !== `` && <div id="overlay"></div>}
     </div>
   );
 }
