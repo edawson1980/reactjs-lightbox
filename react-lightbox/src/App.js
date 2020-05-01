@@ -5,18 +5,22 @@ import './App.css';
 function App() {
   //set images in state, versus hardcoding
   const [images] = useState([
+    //we add arbitrary ids b/c React requires children in a list to each have a unique key. In a WP scenario, these ids will the ids assigned automatically by the WP Media Library
 
     {
+      id: 111,
       src: "/images/artem-sapegin-8c6eS43iq1o-unsplash.jpg",
       alt: "Sunset Behind Mountains by Artem Sapegin via Unsplash"
     },
 
     {
+      id: 112,
       src: "/images/ashley-knedler-OwpgxILRR7c-unsplash.jpg",
       alt: "Antelope Canyon by Ashley Knedler via Unsplash"
     },
 
     {
+      id: 113,
       src: "/images/cristina-gottardi-R4y_E5ZQDPg-unsplash.jpg",
       alt: "Mountains And Trees Reflecting On Lake by Cristina Gottardi via Unsplash"
     }
