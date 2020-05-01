@@ -64,6 +64,9 @@ function App() {
     <div className="App">
 
     <section className="lightbox">
+      {images.map(image =>
+        <img key={image.id} onClick={openModal} src={image.src} alt={image.alt}/>
+      )}
 
     </section>
 
