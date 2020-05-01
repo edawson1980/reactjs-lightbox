@@ -32,6 +32,7 @@ function App() {
       src: ``,
       alt: ``
     })
+    document.removeEventListener(`keyup`, listenForClose);
   }
 
   return (
