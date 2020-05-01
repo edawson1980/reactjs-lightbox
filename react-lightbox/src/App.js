@@ -18,7 +18,14 @@ function App() {
     console.log(image);
   }
 
-  //create a function to close the lightbox
+  //create a function to make sure only clicking the div will close the lightbox. clicking the photo will have no effect.
+  function listenForClose(event) {
+    if (event.target.id === `overlay`) {
+      closeModal();
+    }
+  }
+
+  //create a function to close the lightbox. we will attach it to the overlay div via onClick
   function closeModal(event) {
     updateImage({
       src: ``,
@@ -48,7 +55,7 @@ function App() {
     </section>
 
     {/*this conditional says that IF image.src isn't empty AND a div named "overlay" exists, show that overlay*/}
-    {image.src !== `` && <div onClick={closeModal} id="overlay">
+    {image.src !== `` && <div onClick={listenForClose} id="overlay">
       <figure>
         <img src={image.src} alt={image.alt}/>
         <figcaption>{image.alt}</figcaption>
